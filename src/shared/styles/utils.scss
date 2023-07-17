@@ -1,0 +1,9 @@
+@mixin calculateValue($property, $currentProgress, $minProgress, $maxProgress, $minValue: 0, $maxValue: 1, $unit: '') {
+  $progressInsideLimits: max(0, min($maxProgress, $currentProgress - $minProgress));
+  $progressNm: calc(calc(1 / #{$maxProgress}) * #{$progressInsideLimits});
+  // #{$property}: calc(calc(#{$minValue} + calc(#{$progressNm} * #{$maxValue - $minValue})) * 1#{$unit});
+  left: calc(#{$progressNm} * 100px);
+}
+
+0.5-0.7
+1

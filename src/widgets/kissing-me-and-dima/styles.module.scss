@@ -1,0 +1,31 @@
+@import '@/shared/styles/utils.scss';
+
+.kissingMeAndDima {
+  height: 400vh;
+
+  .me,
+  .dima {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .me {
+    left: 10%;
+  }
+
+  .dima {
+    right: 10%;
+  }
+
+  .me {
+    @include calculateValue(left, var(--progress), 0.5, 0.7, 100, 200, 'px');
+    // left: calc(var(--nm) * 1px);
+  }
+
+  .dima {
+    @include calculateValue(--nm, var(--progress), 0.5, 0.7, 0, 100, 'px');
+    left: calc(var(--nm) * 1px);
+  }
+}
+

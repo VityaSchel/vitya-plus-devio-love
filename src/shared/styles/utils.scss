@@ -1,9 +1,8 @@
-@mixin calculateValue($property, $currentProgress, $minProgress, $maxProgress, $minValue: 0, $maxValue: 1, $unit: '') {
-  $progressInsideLimits: max(0, min($maxProgress, $currentProgress - $minProgress));
-  $progressNm: calc(calc(1 / #{$maxProgress}) * #{$progressInsideLimits});
-  // #{$property}: calc(calc(#{$minValue} + calc(#{$progressNm} * #{$maxValue - $minValue})) * 1#{$unit});
-  left: calc(#{$progressNm} * 100px);
+@function calculateValue($currentProgress, $minProgress, $maxProgress, $minValue: 0, $maxValue: 1) {
+  $progressRange: calc(#{$maxProgress} - #{$minProgress});
+  $progressPosition: calc(calc(#{$currentProgress} - #{$minProgress}) / #{$progressRange});
+  $valueRange: calc(#{$maxValue} - #{$minValue});
+  $mappedValue: calc($minValue + calc(#{$valueRange} * #{$progressPosition}));
+  $limitedValue: max(#{$minValue}, min(#{$maxValue}, #{$mappedValue}));
+  @return $limitedValue;
 }
-
-0.5-0.7
-1

@@ -29,5 +29,22 @@
     right: calc(calculateValue(var(--progress), $min, $max, 10, 50) * 1%);
     transform: translateX(calc(50% + #{470px/2})) translateY(-50%);
   }
+
+  .heart {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: calc(calculateValue(var(--progress), calc($max - 0.05), 1, 0.5, 0) * 1%);
+    font-size: 1vw;
+    transform: translate(-50%, -50%)
+      scale(
+        calc(
+          easeInQuart(
+            calculateValue(var(--progress), calc($max - 0.05), 1)
+          )
+          * 25000%)
+      );
+    opacity: calculateValue(var(--progress), calc($max - 0.05), calc($max + 0.1));
+  }
 }
 

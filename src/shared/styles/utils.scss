@@ -6,3 +6,7 @@
   $limitedValue: max(#{$minValue}, min(#{$maxValue}, #{$mappedValue}));
   @return $limitedValue;
 }
+
+@function easeInQuart($progress) {
+  @return calc(#{$progress} * #{$progress} * #{$progress});
+}

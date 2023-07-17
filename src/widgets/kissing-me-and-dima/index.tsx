@@ -24,13 +24,15 @@ export function KissingMeAndDima() {
     if (typeof window !== 'undefined') {
       setWindowHeight(window.innerHeight)
     }
-  }, [typeof window])
+  }, [typeof window, window.innerHeight])
 
   return (
     <section className={styles.kissingMeAndDima} style={{ '--progress': progress }}>
       <Image src={Me} className={styles.me} alt='Виктор Щелочков' />
       <Image src={Dima} className={styles.dima} alt='Дмитрий новоселов' />
-      <AiFillHeart />
+      <div className={styles.heart}>
+        <AiFillHeart />
+      </div>
     </section>
   )
 }

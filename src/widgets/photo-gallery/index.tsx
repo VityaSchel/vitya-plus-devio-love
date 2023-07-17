@@ -1,0 +1,5 @@
+export function PhotoGallery() {
+  return (
+    <></>
+  )
+}

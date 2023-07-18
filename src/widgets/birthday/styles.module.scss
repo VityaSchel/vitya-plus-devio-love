@@ -1,0 +1,107 @@
+@import '@/shared/styles/utils.scss';
+
+.birthday {
+  height: 100vh;
+  background-color: #fff;
+  z-index: 1;
+  position: relative;
+  background-color: #e5e5f7;
+  // opacity: 0.8;
+  background: linear-gradient(135deg, rgba(68, 76, 247, 0.8) 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, rgba(68, 76, 247, 0.8) 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, rgba(68, 76, 247, 0.8) 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, rgba(68, 76, 247, 0.8) 25%, rgba(229, 229, 247, 0.8) 25%) 0px 0/ 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  .timer {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    transform: scale(calc(calculateValue(var(--progress), 0, 1, 200, 250) * 1%));
+      // translateY(calc(calculateValue(var(--progress), 0, 1, -40, -100) * 1px));
+
+    > div > div > div:first-child {
+      color: #fff;
+      font-weight: 600;
+      text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    }
+  }
+
+  .label {
+    background-color: #fff;
+    padding: 2px 35px;
+    color: #000;
+    font-family: 'Birthstone', cursive;
+    font-size: 10vw;
+    opacity: 1;
+
+    &.translateAnimation {
+      transform: translateY(calc(calculateValue(var(--progress), 0, 1, 50, 100) * 1px));
+    }
+  }
+
+  .cat {
+    display: flex;
+    box-shadow: 0px 0px 10px 10px red;
+    position: relative;
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      span {
+        font-family: 'Roboto';
+        background: #000;
+      }
+    }
+  }
+   
+    
+  img {
+    height: 45vh;
+    width: auto;
+  }
+  
+  .cat {
+    :local {
+      animation: box-shadow-color 1s;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+@keyframes box-shadow-color {
+  0% {
+    box-shadow: 0px 0px 10px 10px red;
+  }
+
+  16% {
+    box-shadow: 0px 0px 10px 10px orange;
+  }
+
+  33% {
+    box-shadow: 0px 0px 10px 10px yellow;
+  }
+
+  50% {
+    box-shadow: 0px 0px 10px 10px lime;
+  }
+
+  66% {
+    box-shadow: 0px 0px 10px 10px blue;
+  }
+
+  83% {
+    box-shadow: 0px 0px 10px 10px purple;
+  }
+
+  100% {
+    box-shadow: 0px 0px 10px 10px red;
+  }
+}

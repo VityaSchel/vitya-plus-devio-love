@@ -1,0 +1,14 @@
+.footer {
+  position: relative;
+  z-index: 2;
+  background-color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  
+  &, a {
+    color: #eee;
+  }
+}

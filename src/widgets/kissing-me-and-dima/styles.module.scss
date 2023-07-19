@@ -7,27 +7,34 @@
   .dima {
     position: fixed;
     top: 50%;
+
+    height: 50vw;
+    width: auto;
   }
-  
+
   .me {
-    left: 10%;
+    margin-left: 3.5px;
   }
 
   .dima {
-    right: 10%;
+    margin-right: 3.5px;
   }
 
   $min: 0;
   $max: 0.75;
 
   .me {
+    $aspectRatio: calc(1570 / 2316);
+    $width: calc(#{$aspectRatio} * 50vw);
     left: calc(calculateValue(var(--progress), $min, $max, 10, 50) * 1%);
-    transform: translateX(calc(-50% - #{506px/2})) translateY(-50%);
+    transform: translateX(calc(-50% - #{$width/2})) translateY(-50%);
   }
 
   .dima {
+    $aspectRatio: calc(1536 / 2316);
+    $width: calc(#{$aspectRatio} * 50vw);
     right: calc(calculateValue(var(--progress), $min, $max, 10, 50) * 1%);
-    transform: translateX(calc(50% + #{470px/2})) translateY(-50%);
+    transform: translateX(calc(50% + #{$width/2})) translateY(-50%);
   }
 
   .heart {
@@ -36,7 +43,7 @@
     position: fixed;
     left: 50%;
     top: 50%;
-    margin-top: calc(calculateValue(var(--progress), calc($max - 0.05), 1, 0.5, 0) * 1%);
+    margin-top: calc(calculateValue(var(--progress), calc($max - 0.05), 1, 0.5, 0) * 5%);
     font-size: 1vw;
     transform: translate(-50%, -50%)
       scale(
@@ -49,7 +56,8 @@
     opacity: calculateValue(var(--progress), calc($max - 0.05), calc($max + 0.1));
     background: linear-gradient(to right, rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 27%, rgb(241, 235, 27), rgb(241, 235, 27) 33%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142), rgb(237, 34, 36));
     mask-image: url('./heart-mask.svg');
-    background-size: 90%;
+    mask-size: cover;
+    background-size: 100%;
     background-position: center;
     background-position-x: calc(
       calculateValue(var(--progress), calc($max - 0.05), 1, 0, 100)

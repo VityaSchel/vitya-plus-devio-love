@@ -1,12 +1,23 @@
+@use '@/shared/styles/variables.scss' as variables;
 @import '@/shared/styles/utils.scss';
 
 .photoGallery {
   display: flex;
   flex-direction: column;
-  background-color: #000;
   position: relative;
   overflow: hidden;
   height: 200vh;
+  background-color: #000;
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  
+    @media screen and (max-width: variables.$breakpoint-tablet) {
+      flex-direction: row;
+    }
+  }
 
   .row1, 
   .row2 {
@@ -14,9 +25,20 @@
     display: flex;
     width: max-content;
 
+    @media screen and (max-width: variables.$breakpoint-tablet) {
+      flex-direction: column;
+      width: 50vw;
+      height: max-content;
+    }
+
     img {
       height: 100%;
       width: auto;
+
+      @media screen and (max-width: variables.$breakpoint-tablet) {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 
@@ -24,7 +46,14 @@
     $progress: calculateValue(var(--progress), 0, 0.4, 0, 1);
     transform: translateX(calc(calc(100% - 100vw) * 
       calc(#{easeInQuart($progress)} * -1)
-    ))
+    ));
+
+    @media screen and (max-width: variables.$breakpoint-tablet) {
+      $progress: calculateValue(var(--progress), 0, 0.6, 0, 1);
+      transform: translateY(calc(calc(100% - 100vh) * 
+        calc(#{easeInQuart($progress)} * -1)
+      ))
+    }
   }
 
   .row2 {
@@ -32,6 +61,13 @@
     transform: translateX(calc(calc(100% - 100vw) * 
       calc(#{easeInQuart($progress)} - 1)
     ));
+
+    @media screen and (max-width: variables.$breakpoint-tablet) {
+      $progress: calculateValue(var(--progress), 0, 0.6, 0, 1);
+      transform: translateY(calc(calc(100% - 100vh) * 
+        calc(#{easeInQuart($progress)} * -1)
+      ))
+    }
   }
 }
 

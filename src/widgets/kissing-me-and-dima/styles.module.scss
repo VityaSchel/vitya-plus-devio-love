@@ -1,3 +1,4 @@
+@use '@/shared/styles/variables.scss' as variables;
 @import '@/shared/styles/utils.scss';
 
 .kissingMeAndDima {
@@ -70,6 +71,11 @@
       calculateValue(var(--progress), calc($max - 0.05), 1, 0, 100)
       * -0.5px
     );
+
+    @media screen and (max-width: variables.$breakpoint-tablet) {
+      width: 20em;
+      height: 20em;
+    }
   }
 
   .heartScroll {
@@ -82,6 +88,10 @@
     transform: translateX(-50%) rotate(0deg);
 
     opacity: calc(1 - calculateValue(var(--progress), 0, 0.05));
+
+    @media screen and (max-width: variables.$breakpoint-tablet) {
+      font-size: 30vw;
+    }
   }
 
   .heartScroll {

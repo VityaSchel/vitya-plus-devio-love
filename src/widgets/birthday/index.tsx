@@ -16,7 +16,7 @@ export function Birthday() {
     else return years - 1
   }, [])
 
-  const isBirthday = true//new Date().getMonth() === AUGUST && new Date().getDate() < 7
+  const isBirthday = new Date().getMonth() === AUGUST && new Date().getDate() < 7
 
   const newBirthday = React.useMemo(() => {
     const d = new Date()

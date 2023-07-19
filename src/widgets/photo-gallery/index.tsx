@@ -44,21 +44,23 @@ export function PhotoGallery() {
 
   return (
     <div className={styles.photoGallery} style={{ '--progress': progress }}>
-      <div className={styles.row1}>
-        <Image src={Love1} alt='' />
-        <Image src={Love2} alt='' />
-        <Image src={Love3} alt='' />
-        <Image src={Love4} alt='' />
-        <Image src={Love5} alt='' />
-        <Image src={Love6} alt='' />
-      </div>
-      <div className={styles.row2}>
-        <Image src={Love7} alt='' />
-        <Image src={Love8} alt='' />
-        <Image src={Love9} alt='' />
-        <Image src={Love10} alt='' />
-        <Image src={Love12} alt='' />
-        <Image src={Love13} alt='' />
+      <div className={styles.rows}>
+        <div className={styles.row1}>
+          <Image src={Love1} alt='' />
+          <Image src={Love2} alt='' />
+          <Image src={Love3} alt='' />
+          <Image src={Love4} alt='' />
+          <Image src={Love5} alt='' />
+          <Image src={Love6} alt='' />
+        </div>
+        <div className={styles.row2}>
+          <Image src={Love7} alt='' />
+          <Image src={Love8} alt='' />
+          <Image src={Love9} alt='' />
+          <Image src={Love10} alt='' />
+          <Image src={Love12} alt='' />
+          <Image src={Love13} alt='' />
+        </div>
       </div>
       <Balls />
     </div>

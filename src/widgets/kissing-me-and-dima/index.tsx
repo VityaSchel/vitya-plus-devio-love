@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import Image from 'next/image'
-import { AiFillHeart } from 'react-icons/ai'
 import Me from '@/sussets/me.png'
 import Dima from '@/sussets/dima.png'
 

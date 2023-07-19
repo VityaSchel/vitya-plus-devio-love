@@ -10,3 +10,13 @@
 @function easeInQuart($progress) {
   @return calc(#{$progress} * #{$progress} * #{$progress});
 }
+
+// @function easeInOutCubic($progress) {
+//   $progress: max(0, min(1, $progress));
+//   @if $progress <= 0.5 {
+//     @return 4 * $progress * $progress * $progress;
+//   } @else {
+//     $progress: $progress - 1;
+//     @return 4 * $progress * $progress * $progress + 1;
+//   }
+// }

@@ -1,0 +1,51 @@
+@import '@/shared/styles/utils.scss';
+
+.photoGallery {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  height: 200vh;
+
+  .row1, 
+  .row2 {
+    height: 50vh;
+    display: flex;
+    width: max-content;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .row1 {
+    $progress: calculateValue(var(--progress), 0, 0.4, 0, 1);
+    transform: translateX(calc(calc(100% - 100vw) * 
+      calc(#{easeInQuart($progress)} * -1)
+    ))
+  }
+
+  .row2 {
+    $progress: calculateValue(var(--progress), 0.3, 0.6, 0, 1);
+    transform: translateX(calc(calc(100% - 100vw) * 
+      calc(#{easeInQuart($progress)} - 1)
+    ));
+  }
+}
+
+.hearts {
+  position: relative;
+  height: 100vh;
+  $progress: calculateValue(var(--progress), 0.5, 1, 0, 1);
+
+  .heart {
+    position: absolute;
+    color: red;
+
+    transform: translateY(
+      calc(#{easeInQuart($progress)} * var(--multiplier))
+    );
+  }
+}

@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { BsFillBalloonHeartFill } from 'react-icons/bs'
 import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown'
 import Cat1 from '@/sussets/love14.jpeg'
 import Cat2 from '@/sussets/love15.jpeg'

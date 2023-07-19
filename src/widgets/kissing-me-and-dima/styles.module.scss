@@ -2,6 +2,12 @@
 
 .kissingMeAndDima {
   height: 400vh;
+  background: linear-gradient(to right, #fff, #bbb, #fff);
+  background-size: 200%;
+  background-position-x: calc(
+      calculateValue(var(--progress), 0, 1, 0, 200)
+      * 2%
+    );
 
   .me,
   .dima {

@@ -71,5 +71,69 @@
       * -0.5px
     );
   }
+
+  .heartScroll {
+    position: fixed;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    font-size: 5vw;
+    color: rgb(255, 0, 68);
+    transform: translateX(-50%) rotate(0deg);
+
+    opacity: calc(1 - calculateValue(var(--progress), 0, 0.05));
+  }
+
+  .heartScroll {
+    :local {
+      animation: rotateToDown 750ms, heartbeat 2s linear;
+      animation-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
+      animation-iteration-count: 1, infinite;
+      animation-fill-mode: forwards, forwards;
+      animation-delay: 0.5s, 0.5s + 750ms;
+    }
+  }
+}
+
+@keyframes rotateToDown {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(-50%) rotate(135deg);
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: translateX(-50%) rotate(135deg) 
+      translateY(-0%);
+  }
+  
+  15% {
+    transform: translateX(-64%) rotate(135deg) 
+      translateY(-20%);
+  }
+
+  30% {
+    transform: translateX(-50%) rotate(135deg) 
+      translateY(0%);
+  }
+  
+  45% {
+    transform: translateX(-64%) rotate(135deg) 
+      translateY(-20%);
+  }
+
+  60% {
+    transform: translateX(-50%) rotate(135deg) 
+      translateY(0%);
+  }
+
+  100% {
+    transform: translateX(-50%) rotate(135deg)
+      translateY(0%);
+  }
 }
 

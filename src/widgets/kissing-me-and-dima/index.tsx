@@ -3,6 +3,7 @@ import styles from './styles.module.scss'
 import Image from 'next/image'
 import Me from '@/sussets/me.png'
 import Dima from '@/sussets/dima.png'
+import { BsArrowThroughHeartFill } from 'react-icons/bs'
 
 export function KissingMeAndDima() {
   const [scrollPosition, setScrollPosition] = React.useState(0)
@@ -31,6 +32,7 @@ export function KissingMeAndDima() {
 
   return (
     <section className={styles.kissingMeAndDima} style={{ '--progress': progress }}>
+      <BsArrowThroughHeartFill className={styles.heartScroll} />
       <Image src={Me} className={styles.me} alt='Виктор Щелочков' />
       <Image src={Dima} className={styles.dima} alt='Дмитрий новоселов' />
       <div className={styles.heart} />
